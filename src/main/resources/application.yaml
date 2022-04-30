@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    include:
+    active: local
+  application:
+    name: movie-server
+
+logging:
+  level:
+    inno.escape.movieserver: debug
