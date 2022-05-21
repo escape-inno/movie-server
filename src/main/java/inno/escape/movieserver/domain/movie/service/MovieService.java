@@ -10,4 +10,8 @@ public interface MovieService {
     List<MovieDetailResponseDto> getMovies();
 
     MovieDetailResponseDto getMovie(String code);
+
+    List<MovieDetailResponseDto> getFilmoByPeople(String peopleCode);
+
+//    List<MovieDetailResponseDto> getFilmoByCompany(String companyCode);
 }

@@ -37,4 +37,15 @@ public class MovieController {
         return ResponseEntity.status(HttpStatus.OK).body(movieDetailResponseDto);
     }
 
+    @GetMapping("/filmo/people/{code}")
+    public ResponseEntity<List<MovieDetailResponseDto>> getFilmoByPeople(@PathVariable String peopleCode) {
+        List<MovieDetailResponseDto> movieDetailResponseDtoList = movieService.getFilmoByPeople(peopleCode);
+        return ResponseEntity.status(HttpStatus.OK).body(movieDetailResponseDtoList);
+    }
+
+//    @GetMapping("/filmo/company/{code}")
+//    public ResponseEntity<List<MovieDetailResponseDto>> getFilmoByCompany(@PathVariable String companyCode) {
+//        List<MovieDetailResponseDto> movieDetailResponseDtoList = movieService.getFilmoByCompany(companyCode);
+//        return ResponseEntity.status(HttpStatus.OK).body(movieDetailResponseDtoList);
+//    }
 }

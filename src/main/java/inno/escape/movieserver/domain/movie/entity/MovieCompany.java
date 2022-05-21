@@ -1,6 +1,5 @@
 package inno.escape.movieserver.domain.movie.entity;
 
-import inno.escape.moviebatch.domain.company.entity.Company;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +21,7 @@ public class MovieCompany {
     @JoinColumn(name = "movie_code")
     private Movie movie;
 
-    @OneToOne
-    @JoinColumn(name = "company_id")
-    private Company company;
+//    @OneToOne
+//    @JoinColumn(name = "company_id")
+//    private Company company;
 }

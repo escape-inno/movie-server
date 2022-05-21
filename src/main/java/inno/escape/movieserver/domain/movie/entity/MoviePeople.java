@@ -1,6 +1,5 @@
 package inno.escape.movieserver.domain.movie.entity;
 
-import inno.escape.moviebatch.domain.people.entity.People;
 import inno.escape.movieserver.domain.people.entity.People;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

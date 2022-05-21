@@ -29,6 +29,7 @@ public class MovieServiceImpl implements MovieService {
 
     private final MovieRepository movieRepository;
     private final PeopleRepository peopleRepository;
+//    private final CompanyRepository companyRepository;
     private final MovieGenreRepository movieGenreRepository;
     private final MoviePeopleRepository moviePeopleRepository;
     private final MovieCompanyRepository movieCompanyRepository;
@@ -65,4 +66,36 @@ public class MovieServiceImpl implements MovieService {
 
         return movieDetailResponseDto;
     }
+
+    @Override
+    public List<MovieDetailResponseDto> getFilmoByPeople(String peopleCode) {
+        People people = peopleRepository.findByCode(peopleCode);
+        if(people == null){
+            throw new IllegalArgumentException("존재 하지 않는 people 코드입니다.");
+        }
+
+        List<MoviePeople> moviePeopleList = moviePeopleRepository.findByPeople(people);
+        List<Movie> movieList = new ArrayList<>();
+        for(MoviePeople moviePeople : moviePeopleList) {
+            movieList.add(moviePeople.getMovie());
+        }
+
+        return MovieDetailResponseMapper.INSTANCE.toDtoList(movieList);
+    }
+
+//    @Override
+//    public List<MovieDetailResponseDto> getFilmoByCompany(String companyCode) {
+//        Company company = companyRepository.findByCode(companyCode);
+//        if(company == null){
+//            throw new IllegalArgumentException("존재 하지 않는 company 코드입니다.");
+//        }
+//
+//        List<MovieCompany> movieCompanyList = moviePeopleRepository.findByCompany(company);
+//        List<Movie> movieList = new ArrayList<>();
+//        for(MovieCompany movieCompany : movieCompanyList) {
+//            movieList.add(movieCompany.getMovie());
+//        }
+//
+//        return MovieDetailResponseMapper.INSTANCE.toDtoList(movieList);
+//    }
 }

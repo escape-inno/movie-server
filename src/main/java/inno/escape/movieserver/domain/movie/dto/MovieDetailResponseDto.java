@@ -21,6 +21,6 @@ public class MovieDetailResponseDto {
     private String year;
     private List<GenreDto> genreList;
     private List<PeopleDetailResponseDto> peoples; // director, actor
-    private List<CompanyDetailResponseDto> companies;
+//    private List<CompanyDetailResponseDto> companies;
 
 }
