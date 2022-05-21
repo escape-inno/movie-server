@@ -13,5 +13,5 @@ public interface MovieService {
 
     List<MovieDetailResponseDto> getFilmoByPeople(String peopleCode);
 
-//    List<MovieDetailResponseDto> getFilmoByCompany(String companyCode);
+//    List<MovieDetailResponseDto> getFilmoByCompany(String );
 }
